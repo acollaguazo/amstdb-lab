@@ -1,0 +1,1 @@
+web: gunicorn amstdb.wsgi:application --log-file –
