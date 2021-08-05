@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,11 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ok7cr=lr8+d3fybo7x5^^3xh^&fec1yxvqku8=uip_6gho9)u6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = ('http://localhost:8000')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['amstdb-lab.herokuapp.com']
 
 
 # Application definition
@@ -79,17 +80,9 @@ WSGI_APPLICATION = 'amstdb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'amstdb-lab',
-        'USER': 'postgres',
-        'PASSWORD': 'nati',        
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
-}
 
 
 # Password validation
