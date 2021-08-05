@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-ok7cr=lr8+d3fybo7x5^^3xh^&fec1yxvqku8=uip_6gho9)u6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 CORS_ORIGIN_ALLOW_ALL = False
-CORS_ORIGIN_WHITELIST = ('http://localhost:8000')
+CORS_ORIGIN_WHITELIST = ['http://localhost:3000']
 
 ALLOWED_HOSTS = ['amstdb-lab.herokuapp.com']
 
